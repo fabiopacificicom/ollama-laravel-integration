@@ -70,11 +70,11 @@ class Ollama
     protected $raw;
 
     /**
-     * agent
+     * assistant
      *
      * @var mixed
      */
-    protected $agent;
+    protected $assistant;
 
     /**
      * Base64 encoded image.
@@ -100,14 +100,14 @@ class Ollama
     }
 
     /**
-     * Sets the agent for generation.
+     * Sets the assistant for generation.
      *
-     * @param string $agent
+     * @param string $assistant
      * @return $this
      */
-    public function agent(string $agent)
+    public function assistant(string $assistant)
     {
-        $this->agent = $agent;
+        $this->assistant = $assistant;
         return $this;
     }
 
@@ -292,7 +292,7 @@ class Ollama
     {
         $requestData = [
             'model' => $this->model,
-            'system' => $this->agent,
+            'system' => $this->assistant,
             'prompt' => $this->prompt,
             'format' => $this->format,
             'options' => $this->options,
