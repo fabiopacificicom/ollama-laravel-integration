@@ -41,7 +41,7 @@ return [
 ```php
 use Cloudstudio\Ollama\Facades\Ollama;
 
-$response = Ollama::agent('You are a weather expert...')
+$response = Ollama::assistant('You are a weather expert...')
     ->prompt('Why is the sky blue?')
     ->model('llama2')
     ->options(['temperature' => 0.8])
@@ -71,7 +71,7 @@ $messages = [
     ['role' => 'user', 'content' => 'where I live ?'],
 ];
 
-$response = Ollama::agent('You know me really well!')
+$response = Ollama::assistant('You know me really well!')
     ->model('llama2')
     ->chat($messages);
 
